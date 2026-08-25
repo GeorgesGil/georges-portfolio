@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000). Para validar una entrega:
+Abre [http://localhost:5051](http://localhost:5051). Para validar una entrega:
 
 ```bash
 npm run lint
