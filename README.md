@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Georges Gil — Portafolio
 
-## Getting Started
+Portafolio profesional de [Georges Gil](https://github.com/GeorgesGil), construido con Next.js, TypeScript, Tailwind CSS y shadcn/ui. La aplicación se exporta como sitio estático para Cloudflare Pages.
 
-First, run the development server:
+## Desarrollo local
+
+Requisitos: Node.js 20 o superior y npm.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000). Para validar una entrega:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El build estático queda en `out/`.
 
-## Learn More
+## Estructura
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/page.tsx`: contenido y estructura de la página principal.
+- `src/app/globals.css`: tokens visuales, layout, motion y responsive.
+- `src/app/layout.tsx`: tipografías y metadatos sociales/SEO.
+- `src/app/robots.ts`, `sitemap.ts` y `manifest.ts`: descubrimiento y metadatos web.
+- `src/components/ui/`: componentes shadcn/ui instalados como código fuente.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Publicación en Cloudflare Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. En **Workers & Pages**, crea una aplicación de Pages e importa este repositorio de GitHub.
+2. Selecciona el preset **Next.js (Static HTML Export)**.
+3. Configura la rama de producción como `main`.
+4. Usa `npm run build` como comando de build y `out` como directorio de salida.
+5. Publica el primer deploy; los pushes siguientes generarán despliegues automáticos y los pull requests tendrán previews.
 
-## Deploy on Vercel
+## Dominio `georgesgil.com`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+En el proyecto de Pages, abre **Custom domains**, agrega `georgesgil.com` y sigue la verificación DNS. Agrega también `www.georgesgil.com` y configura una redirección permanente hacia el dominio principal para mantener una sola URL canónica. No añadas reglas de caché personalizadas para los assets del proyecto salvo que exista una necesidad concreta; Pages ya aplica caché en su CDN.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Actualizar contenido
+
+Los proyectos y textos editables están al inicio de `src/app/page.tsx`. No se publican métricas, responsabilidades ni detalles internos que no hayan sido confirmados. Los enlaces profesionales vigentes son:
+
+- [LinkedIn](https://www.linkedin.com/in/georgesgil22/)
+- [GitHub](https://github.com/GeorgesGil)
