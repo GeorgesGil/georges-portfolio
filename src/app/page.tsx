@@ -1,5 +1,6 @@
 import { ArrowDownRight, ArrowUpRight, Braces, Building2, Code2, MapPin, MessageSquare, Route } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const linkedin = "https://www.linkedin.com/in/georgesgil22/";
 const github = "https://github.com/GeorgesGil";
@@ -21,7 +22,7 @@ export default function Home() {
       <header className="site-header">
         <div className="shell header-inner">
           <a className="wordmark" href="#inicio" aria-label="Georges Gil, inicio"><span aria-hidden="true">GG</span><span>Georges Gil</span></a>
-          <nav aria-label="Navegación principal"><a href="#proyectos">Proyectos</a><a href="#enfoque">Enfoque</a><a href="#contacto">Contacto</a></nav>
+          <nav aria-label="Navegación principal"><a href="#proyectos">Proyectos</a><a href="#enfoque">Enfoque</a><a href="#contacto">Contacto</a><ThemeToggle /></nav>
         </div>
       </header>
 
