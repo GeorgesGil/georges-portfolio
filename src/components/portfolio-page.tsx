@@ -7,10 +7,14 @@ import {
   Braces,
   Building2,
   Code2,
+  Database,
+  GitBranch,
   Mail,
   MapPin,
+  Server,
   Terminal,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 import { LocalizedThemeToggle } from "@/components/localized-theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -23,7 +27,15 @@ import {
   skillGroups,
   type Locale,
   type Skill,
+  type SkillGroupCode,
 } from "@/lib/portfolio-dictionary";
+
+const skillGroupIcons: Record<SkillGroupCode, LucideIcon> = {
+  FE: Code2,
+  BE: Server,
+  DB: Database,
+  OPS: GitBranch,
+};
 
 function SkillLogo({ skill }: { skill: Skill }) {
   if ("path" in skill.icon) {
@@ -147,9 +159,10 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             <div className="skills-grid">
               {skillGroups.map((group) => {
                 const groupCopy = t.skills.groups[group.code];
+                const GroupIcon = skillGroupIcons[group.code];
                 return (
                   <article className="skill-group" key={group.code}>
-                    <div className="skill-group-head"><span className="skill-code" aria-hidden="true">{group.code}</span><div><h3 id={`skill-${group.code}`}>{groupCopy.name}</h3><p>{groupCopy.description}</p></div></div>
+                    <div className="skill-group-head"><span className="skill-group-icon" aria-hidden="true"><GroupIcon size={22} strokeWidth={1.8} focusable="false" /></span><div><h3 id={`skill-${group.code}`}>{groupCopy.name}</h3><p>{groupCopy.description}</p></div></div>
                     <ul className="skill-list" aria-labelledby={`skill-${group.code}`}>
                       {group.skills.map((skill) => <li key={skill.name}><SkillLogo skill={skill} /><span>{skill.name}</span></li>)}
                     </ul>

@@ -168,13 +168,15 @@ h1 em::after { content: ""; position: absolute; left: .02em; right: -.02em; bott
 
 .skills-section { padding: 116px 0 124px; background: var(--background); color: var(--foreground); }
 .skills-heading { margin-bottom: 56px; }
+.skills-section .skills-heading .eyebrow { color: var(--primary); }
 .skills-heading h2 { max-width: 820px; color: var(--foreground); }
 .skills-heading > p { margin: 0 0 5px; color: var(--steel); line-height: 1.7; }
 .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
 .skill-group { min-width: 0; padding: 34px clamp(24px, 3.4vw, 44px) 36px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--card) 48%, transparent); transition: transform .25s ease, background-color .25s ease, border-color .25s ease; }
 .skill-group:hover, .skill-group:focus-within { transform: translateY(-3px); background: color-mix(in srgb, var(--sea-glass) 18%, var(--background)); border-color: color-mix(in srgb, var(--primary) 44%, var(--border)); }
 .skill-group-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: start; }
-.skill-code { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--primary); color: var(--primary); font: 650 10px/1 var(--font-mono), monospace; letter-spacing: .06em; }
+.skill-group-icon { display: grid; place-items: center; inline-size: clamp(40px, 8vw, 44px); aspect-ratio: 1; border: 1px solid color-mix(in srgb, var(--primary) 62%, var(--border)); color: var(--primary); background: color-mix(in srgb, var(--primary) 8%, var(--card)); }
+.skill-group-icon svg { width: clamp(18px, 4vw, 22px); height: clamp(18px, 4vw, 22px); }
 .skill-group h3 { font-size: clamp(1.65rem, 2.8vw, 2.25rem); line-height: 1; letter-spacing: -.045em; }
 .skill-group-head p { max-width: 330px; margin: 10px 0 0; color: var(--steel); font-size: 14px; line-height: 1.55; }
 .skill-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0 18px; margin: 29px 0 0; padding: 12px 0 0; border-top: 1px solid var(--border); list-style: none; }

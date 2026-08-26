@@ -260,12 +260,12 @@ export const content: Record<Locale, LocalizedContent> = {
     skills: {
       eyebrow: "Herramientas técnicas",
       title: "Tecnologías con las que trabajo.",
-      description: "Un conjunto práctico de herramientas para interfaces, servicios, datos y entrega.",
+      description: "Un conjunto práctico de herramientas para interfaces, servicios, datos, automatización y colaboración.",
       groups: {
         FE: { name: "Frontend", description: "Interfaces que ayudan a entender y usar cada producto." },
         BE: { name: "Backend", description: "Servicios y APIs que dan una base confiable a cada interfaz." },
         DB: { name: "Datos", description: "Capas de datos elegidas por claridad, rendimiento y mantenimiento." },
-        OPS: { name: "Entrega", description: "Herramientas que mantienen la colaboración y las entregas en movimiento." },
+        OPS: { name: "DevOps y colaboración", description: "Automatización, despliegue y colaboración para mantener el trabajo técnico claro y coordinado." },
       },
     },
     process: {
@@ -345,12 +345,12 @@ export const content: Record<Locale, LocalizedContent> = {
     skills: {
       eyebrow: "Technical toolkit",
       title: "Technologies I work with.",
-      description: "A practical set of tools spanning interfaces, services, data, and delivery.",
+      description: "A practical toolkit spanning interfaces, services, data, automation, and collaboration.",
       groups: {
         FE: { name: "Frontend", description: "Interfaces that make products easy to understand and use." },
         BE: { name: "Backend", description: "Services and APIs that give each interface a reliable foundation." },
         DB: { name: "Data", description: "Data layers chosen for clarity, performance, and maintainability." },
-        OPS: { name: "Delivery", description: "Tools that keep collaboration and releases moving with intention." },
+        OPS: { name: "DevOps & Collaboration", description: "Automation, deployment, and teamwork tools that keep technical work clear and coordinated." },
       },
     },
     process: {
