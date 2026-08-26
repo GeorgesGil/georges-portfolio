@@ -13,16 +13,23 @@ const approach = [
   { step: "Sistema", title: "Convertir claridad en producto", text: "Organizo la experiencia y la tecnología alrededor de decisiones simples, útiles y mantenibles." },
   { step: "Impacto", title: "Entregar para el mundo real", text: "Cuido rendimiento, accesibilidad y detalle para que el producto funcione fuera de la presentación." },
 ];
+const skillGroups = [
+  { code: "FE", name: "Frontend", description: "Interfaces claras para productos que las personas usan a diario.", skills: ["JavaScript", "TypeScript", "React.js", "Next.js", "Vue.js"] },
+  { code: "BE", name: "Backend", description: "Servicios y lógica que mantienen cada experiencia en movimiento.", skills: ["Node.js", "NestJS"] },
+  { code: "DB", name: "Data", description: "Datos confiables para decisiones, operaciones y continuidad.", skills: ["SQL Server", "MySQL", "PostgreSQL", "Redis"] },
+  { code: "OPS", name: "Delivery", description: "Flujos de entrega que acercan el código a producción con orden.", skills: ["Git", "GitHub", "GitHub Actions", "Cloudflare"] },
+];
+const knowsAbout = skillGroups.flatMap((group) => group.skills);
 
 export default function Home() {
-  const personSchema = { "@context": "https://schema.org", "@type": "Person", name: "Georges Gil", url: "https://georgesgil.com", jobTitle: "Desarrollador de software", sameAs: [linkedin, github], address: { "@type": "PostalAddress", addressLocality: "Santiago de los Caballeros", addressCountry: "DO" } };
+  const personSchema = { "@context": "https://schema.org", "@type": "Person", name: "Georges Gil", url: "https://georgesgil.com", jobTitle: "Desarrollador de software", sameAs: [linkedin, github], knowsAbout, address: { "@type": "PostalAddress", addressLocality: "Santiago de los Caballeros", addressCountry: "DO" } };
   return (
     <>
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
       <header className="site-header">
         <div className="shell header-inner">
           <a className="wordmark" href="#inicio" aria-label="Georges Gil, inicio"><span aria-hidden="true">GG</span><span>Georges Gil</span></a>
-          <nav aria-label="Navegación principal"><a href="#proyectos">Proyectos</a><a href="#enfoque">Enfoque</a><a href="#contacto">Contacto</a><ThemeToggle /></nav>
+          <nav aria-label="Navegación principal"><a href="#proyectos">Proyectos</a><a href="#skills">Skills</a><a href="#enfoque">Enfoque</a><a href="#contacto">Contacto</a><ThemeToggle /></nav>
         </div>
       </header>
 
@@ -64,6 +71,25 @@ export default function Home() {
                     <h3>{project.name}</h3><p>{project.summary}</p>
                     <Button asChild variant="link" className="project-link"><a href={project.url} target="_blank" rel="noreferrer">Visitar {project.domain}<ArrowUpRight data-icon="inline-end" aria-hidden="true" /></a></Button>
                   </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="skills-section" id="skills" aria-labelledby="skills-title">
+          <div className="shell">
+            <div className="section-heading skills-heading">
+              <div><p className="eyebrow">Mapa de capacidades</p><h2 id="skills-title">Herramientas para llevar una idea hasta la entrega.</h2></div>
+              <p>Una base técnica pensada para conectar la interfaz, la lógica y el camino que lleva un producto al mundo real.</p>
+            </div>
+            <div className="skills-grid">
+              {skillGroups.map((group) => (
+                <article className="skill-group" key={group.code}>
+                  <div className="skill-group-head"><span className="skill-code" aria-hidden="true">{group.code}</span><div><h3 id={`skill-${group.code}`}>{group.name}</h3><p>{group.description}</p></div></div>
+                  <ul className="skill-list" aria-labelledby={`skill-${group.code}`}>
+                    {group.skills.map((skill) => <li key={skill}>{skill}</li>)}
+                  </ul>
                 </article>
               ))}
             </div>
