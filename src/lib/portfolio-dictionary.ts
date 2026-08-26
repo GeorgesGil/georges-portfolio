@@ -3,6 +3,7 @@ import type { ComponentType, SVGProps } from "react";
 import type { SimpleIcon } from "simple-icons";
 import {
   siCloudflare,
+  siDocker,
   siExpress,
   siGit,
   siGithub,
@@ -167,6 +168,7 @@ export const skillGroups: SkillGroup[] = [
       { name: "GitHub", icon: siGithub },
       { name: "GitHub Actions", icon: siGithubactions },
       { name: "Cloudflare", icon: siCloudflare },
+      { name: "Docker", icon: siDocker },
       { name: "Jira", icon: siJira },
       { name: "Slack", icon: SlackOriginal },
     ],
