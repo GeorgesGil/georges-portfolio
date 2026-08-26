@@ -1,9 +1,10 @@
-import { ArrowDownRight, ArrowUpRight, Braces, Building2, Code2, MapPin, MessageSquare, Route } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Braces, Building2, Code2, Mail, MapPin, MessageSquare, Route } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const linkedin = "https://www.linkedin.com/in/georgesgil22/";
 const github = "https://github.com/GeorgesGil";
+const contactEmail = "contact@georgesgil.com";
 const projects = [
   { name: "Constructora Real", domain: "constructorareal.com.do", url: "https://constructorareal.com.do/", sector: "Bienes raíces", summary: "Una presencia digital enfocada en acercar proyectos habitacionales a quienes buscan su próximo hogar.", accent: "project-blue" },
   { name: "Loto Real", domain: "lotoreal.com.do", url: "https://www.lotoreal.com.do/", sector: "Entretenimiento", summary: "Una plataforma pública para consultar resultados, conocer productos y seguir la experiencia de la marca.", accent: "project-coral" },
@@ -22,7 +23,7 @@ const skillGroups = [
 const knowsAbout = skillGroups.flatMap((group) => group.skills);
 
 export default function Home() {
-  const personSchema = { "@context": "https://schema.org", "@type": "Person", name: "Georges Gil", url: "https://georgesgil.com", jobTitle: "Desarrollador de software", sameAs: [linkedin, github], knowsAbout, address: { "@type": "PostalAddress", addressLocality: "Santiago de los Caballeros", addressCountry: "DO" } };
+  const personSchema = { "@context": "https://schema.org", "@type": "Person", name: "Georges Gil", url: "https://georgesgil.com", email: contactEmail, jobTitle: "Desarrollador de software", sameAs: [linkedin, github], knowsAbout, address: { "@type": "PostalAddress", addressLocality: "Santiago de los Caballeros", addressCountry: "DO" } };
   return (
     <>
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
@@ -115,7 +116,8 @@ export default function Home() {
         <section className="contact shell" id="contacto" aria-labelledby="contact-title">
           <div><p className="eyebrow">Próxima ruta</p><h2 id="contact-title">Hablemos de lo que quieres poner en movimiento.</h2></div>
           <div className="contact-actions">
-            <Button asChild size="lg" className="contact-button"><a href={linkedin} target="_blank" rel="noreferrer">Escribirme en LinkedIn<ArrowUpRight data-icon="inline-end" aria-hidden="true" /></a></Button>
+            <Button asChild size="lg" className="contact-button"><a href={`mailto:${contactEmail}`}><Mail data-icon="inline-start" aria-hidden="true" />{contactEmail}</a></Button>
+            <Button asChild size="lg" variant="outline" className="contact-button"><a href={linkedin} target="_blank" rel="noreferrer">Escribirme en LinkedIn<ArrowUpRight data-icon="inline-end" aria-hidden="true" /></a></Button>
             <Button asChild size="lg" variant="outline" className="contact-button"><a href={github} target="_blank" rel="noreferrer"><Code2 data-icon="inline-start" aria-hidden="true" />Ver mi GitHub</a></Button>
           </div>
         </section>
