@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-labelledby="title">
+  <title id="title">GG</title>
+  <rect width="32" height="32" rx="8" fill="#1649d8"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2">
+    <path d="M13.1 11.2c-.8-1.1-2-1.7-3.6-1.7-2.9 0-4.8 2.1-4.8 5s1.9 5 4.8 5c1.5 0 2.8-.5 3.7-1.3v-3.4H9.4"/>
+    <path d="M27.3 11.2c-.8-1.1-2-1.7-3.6-1.7-2.9 0-4.8 2.1-4.8 5s1.9 5 4.8 5c1.5 0 2.8-.5 3.7-1.3v-3.4h-3.8"/>
+  </g>
+</svg>
