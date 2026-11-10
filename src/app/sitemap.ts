@@ -1,17 +1,18 @@
 import type { MetadataRoute } from "next";
+import { languageUrls } from "@/lib/portfolio-dictionary";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const alternates = {
     languages: {
-      es: "https://georgesgil.com/",
-      en: "https://georgesgil.com/en/",
+      es: languageUrls.es,
+      en: languageUrls.en,
     },
   };
 
   return [
-    { url: "https://georgesgil.com/", alternates, changeFrequency: "monthly", priority: 1 },
-    { url: "https://georgesgil.com/en/", alternates, changeFrequency: "monthly", priority: 1 },
+    { url: languageUrls.es, alternates, changeFrequency: "monthly", priority: 1 },
+    { url: languageUrls.en, alternates, changeFrequency: "monthly", priority: 1 },
   ];
 }

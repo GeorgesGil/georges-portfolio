@@ -4,32 +4,29 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
 
-import { Button } from "@/components/ui/button";
-
-export function ThemeToggle() {
+export function ThemeToggle({ label }: { label: string }) {
   const { resolvedTheme, setTheme } = useTheme();
   const mounted = useSyncExternalStore(
     () => () => undefined,
     () => true,
     () => false,
   );
-
   const isDark = mounted && resolvedTheme === "dark";
 
   return (
-    <Button
+    <button
       type="button"
-      variant="ghost"
-      size="icon"
-      aria-label="Cambiar entre modo claro y oscuro"
-      title="Cambiar entre modo claro y oscuro"
+      className="theme-toggle"
+      aria-label={label}
+      title={label}
+      aria-pressed={isDark}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
       {isDark ? (
-        <Sun data-icon="inline-start" aria-hidden="true" />
+        <Sun size={16} strokeWidth={1.5} aria-hidden="true" focusable="false" />
       ) : (
-        <Moon data-icon="inline-start" aria-hidden="true" />
+        <Moon size={16} strokeWidth={1.5} aria-hidden="true" focusable="false" />
       )}
-    </Button>
+    </button>
   );
 }
