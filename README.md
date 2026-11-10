@@ -6,7 +6,7 @@ La página es un **portafolio editorial** en español e inglés: el nombre y el 
 
 ## Desarrollo local
 
-Requisitos: Node.js 20 o superior y npm.
+Requisitos: Node.js 20.9 o superior y npm. El CI y el desarrollo local se han probado con Node 24.
 
 ```bash
 npm install
