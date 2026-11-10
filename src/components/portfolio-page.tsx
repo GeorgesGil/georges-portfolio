@@ -50,7 +50,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
 
       <header className="site-header">
         <div className="wrap header-inner">
-          <a className="brand" href="#top">
+          <a className="brand" href="#top" aria-label={t.brandLabel}>
             <BrandMark />
             <span className="brand-name">Georges Gil</span>
           </a>

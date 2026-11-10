@@ -61,6 +61,7 @@ export type LocalizedContent = {
     jobTitle: string;
   };
   skipLink: string;
+  brandLabel: string;
   navLabel: string;
   menuLabel: string;
   nav: { work: string; stack: string; about: string; contact: string };
@@ -231,6 +232,7 @@ export const content: Record<Locale, LocalizedContent> = {
       jobTitle: "Ingeniero de Sistemas y Desarrollador de Software",
     },
     skipLink: "Saltar al contenido",
+    brandLabel: "Georges Gil, inicio",
     navLabel: "Navegación principal",
     menuLabel: "Menú",
     nav: { work: "Trabajo", stack: "Stack", about: "Sobre mí", contact: "Contacto" },
@@ -304,6 +306,7 @@ export const content: Record<Locale, LocalizedContent> = {
       jobTitle: "Systems Engineer and Software Developer",
     },
     skipLink: "Skip to content",
+    brandLabel: "Georges Gil, home",
     navLabel: "Main navigation",
     menuLabel: "Menu",
     nav: { work: "Work", stack: "Stack", about: "About", contact: "Contact" },
