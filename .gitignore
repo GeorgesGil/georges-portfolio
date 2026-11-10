@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# design tooling metadata
+/.impeccable/
+/.review/
+# local design-tooling hooks (contain machine-specific absolute paths)
+/.codex/
+/.gemini/
+
